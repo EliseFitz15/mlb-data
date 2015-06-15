@@ -22,6 +22,11 @@ get '/mlb/v2/JSON/teams' do
       http.request(request)
   end
 
-  puts response.body
+  teams = response
+  teams.each do |team|
+    team
+binding.pry
+  end
 
+  erb :index, locals: { teams: teams }
 end
